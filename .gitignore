@@ -24,10 +24,10 @@
 *.smod
 
 # Compiled Static libraries
-# lib
 *.lai
 *.la
 *.a
+#*.lib
 
 # Executables
 *.exe
