@@ -1,5 +1,6 @@
 #VS cache
 *.opendb
+*.ipch
 
 # Prerequisites
 *.d
