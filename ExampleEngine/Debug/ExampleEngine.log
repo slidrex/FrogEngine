@@ -1,13 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ExampleEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  FrogEngineFileParser.cpp
-  VertexArray.cpp
-  VertexBuffer.cpp
-  IndexBuffer.cpp
   main.cpp
-  Renderer.cpp
-  Shader.cpp
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Proj\FrogEngine\Dependencies\GLFW\include\glfw3.h(123): message : see previous definition of 'APIENTRY'
   ExampleEngine.vcxproj -> C:\Proj\FrogEngine\Debug\FrogEngine.exe

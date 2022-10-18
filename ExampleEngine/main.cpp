@@ -2,12 +2,15 @@
 #include <glfw3.h>
 #include <iostream>
 #include "Renderer.h"
-
+#include "Log.h"
 
 int main()
 {
 	if (!glfwInit())
+	{
+		FROG_CRITICAL("GLEW is not setup.");
 		return -1;
+	}
 
 	GLFWwindow* window;
 	window = glfwCreateWindow(640, 480, "FrogEngine", NULL, NULL);
@@ -27,8 +30,8 @@ int main()
 	
 	glfwMakeContextCurrent(window);
 
-	if (glewInit() != GLEW_OK) std::cout << "GLEW error!";
-
+	if (glewInit() != GLEW_OK) FROG_CRITICAL("GLEW is not setup.");
+	
 	FrogEngine::Renderer renderer;
 
 	FrogEngine::VertexBuffer vertexBuffer(verticies, sizeof(verticies));
