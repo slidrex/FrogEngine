@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleEngine", "ExampleEngine\ExampleEngine.vcxproj", "{37B215E4-011E-4EFA-A890-18E6B8D27372}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application\Application.vcxproj", "{A1CF7566-7AE4-4277-BD81-DED1AE2F8A5D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExampleEngine", "ExampleEngine\ExampleEngine.vcxproj", "{37B215E4-011E-4EFA-A890-18E6B8D27372}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

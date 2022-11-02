@@ -1,5 +1,4 @@
 #include "glew.h"
-#include "glfw3.h"
 #include "VertexBuffer.h"
 
 using namespace FrogEngine;

@@ -1,7 +1,7 @@
-#include <iostream>
-
+#include "FrogEngine.h"
 
 int main()
 {
-	std::cout << "Hello World!" << std::endl;
+	FROG_LOG("Init");
+
 }

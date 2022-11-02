@@ -37,6 +37,9 @@
     <ClCompile Include="FrogEngineFileParser.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="ErrorChecking.cpp">
+      <Filter>src\Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h">
@@ -58,6 +61,12 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="Log.h">
+      <Filter>src\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="FrogEngine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorChecking.h">
       <Filter>src\Debug</Filter>
     </ClInclude>
   </ItemGroup>

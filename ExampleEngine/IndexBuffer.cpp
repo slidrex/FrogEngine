@@ -1,5 +1,5 @@
+#include "glew.h"
 #include "IndexBuffer.h"
-#include "Renderer.h"
 
 using namespace FrogEngine;
 

@@ -1,6 +1,5 @@
-#include "glew.h"
 #include "Renderer.h"
-#include "IndexBuffer.h"
+
 using namespace FrogEngine;
 
 void Renderer::Clear() const
@@ -13,12 +12,4 @@ void Renderer::Draw(RenderMode renderMode, FrogEngine::VertexArray& vertexArray,
 	indexBuffer.Bind();
 	shader.Bind();
 	glDrawElements(renderMode, indexBuffer.GetCount(), GL_UNSIGNED_INT, nullptr);
-}
-
-void TryGetError()
-{
-	if (glGetError() != GL_NO_ERROR)
-	{
-		std::cout << "OpenGL Error!" << std::endl;
-	}
 }

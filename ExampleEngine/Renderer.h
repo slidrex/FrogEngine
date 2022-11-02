@@ -1,7 +1,9 @@
-#pragma once
+#include "glew.h"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glfw3.h"
 #include "Shader.h"
-#include "IndexBuffer.h"
 #include "VertexArray.h"
+#include "IndexBuffer.h"
 
 namespace FrogEngine
 {

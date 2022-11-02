@@ -1,9 +1,19 @@
 #include <glew.h>
-#include<iostream>
 #include "Shader.h"
 #include "FrogEngineFileParser.h"
 
 using namespace FrogEngine;
+
+int Shader::GetUniformLocation(const std::string& name) const
+{
+	if(uniformLocationCache.find(name) != uniformLocationCache.end())
+	{
+		return uniformLocationCache[name];
+	}
+	int location = glGetUniformLocation(shader_program, name.c_str());
+	uniformLocationCache[name] = location;
+	return location;
+}
 
 Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 {
@@ -28,10 +38,13 @@ Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 	shader_program = shader;
 	
 }
-void Shader::SetUniform4f(std::string name, float f1, float f2, float f3, float f4)
+void Shader::SetUniform4f(const std::string& name, float f1, float f2, float f3, float f4)
 {
-	unsigned int location = glGetUniformLocation(shader_program, name.c_str());
-	glUniform4f(location, f1, f2, f3, f4);
+	glUniform4f(GetUniformLocation(name), f1, f2, f3, f4);
+}
+void Shader::SetMatrix4f(const std::string& name, const glm::mat4& matrix)
+{
+	glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 }
 Shader::~Shader()
 {
