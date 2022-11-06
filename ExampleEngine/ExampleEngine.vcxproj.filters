@@ -16,9 +16,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="IndexBuffer.cpp">
       <Filter>src\Render</Filter>
     </ClCompile>
@@ -37,8 +34,11 @@
     <ClCompile Include="FrogEngineFileParser.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="ErrorChecking.cpp">
+    <ClCompile Include="ErrorCatcher.cpp">
       <Filter>src\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,8 +66,11 @@
     <ClInclude Include="FrogEngine.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="ErrorChecking.h">
+    <ClInclude Include="ErrorCatcher.h">
       <Filter>src\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

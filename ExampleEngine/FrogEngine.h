@@ -1,7 +1,4 @@
+#pragma once
 #include "Renderer.h"
 #include "Log.h"
-
-namespace FrogEngine
-{
-
-}
+#include "Application.h"

@@ -15,8 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="source.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="HelloTriangle.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HelloTriangle.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

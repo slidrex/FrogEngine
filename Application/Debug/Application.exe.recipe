@@ -2,9 +2,6 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Proj\FrogEngine\Debug\FrogEngine.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
       <FullPath>C:\Proj\FrogEngine\Debug\Application.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

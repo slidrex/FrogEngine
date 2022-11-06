@@ -12,6 +12,7 @@ FrogEngine::VertexArray::VertexArray(FrogEngine::VertexBuffer buffer, unsigned i
 
 	glVertexAttribPointer(currentLocation, stride, GL_FLOAT, GL_FALSE, stride * sizeof(float), NULL);
 
+	buffer.Unbind();
 	Unbind();
 }
 FrogEngine::VertexArray::~VertexArray()

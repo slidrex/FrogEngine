@@ -1,4 +1,8 @@
-﻿  main.cpp
+﻿  HelloTriangle.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Proj\FrogEngine\Dependencies\GLFW\include\glfw3.h(123): message : see previous definition of 'APIENTRY'
+  source.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Proj\FrogEngine\Dependencies\GLFW\include\glfw3.h(123): message : see previous definition of 'APIENTRY'
+  Generating Code...
   Application.vcxproj -> C:\Proj\FrogEngine\Debug\Application.exe

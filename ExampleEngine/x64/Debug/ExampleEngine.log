@@ -1,2 +1,39 @@
-﻿  main.cpp
-  ExampleEngine.vcxproj -> C:\Proj\ProjectOpenGL\x64\Debug\ExampleEngine.exe
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (ExampleEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+ErrorChecking.obj : error LNK2001: unresolved external symbol __glewDebugMessageCallback
+VertexArray.obj : error LNK2001: unresolved external symbol __glewVertexAttribPointer
+VertexArray.obj : error LNK2001: unresolved external symbol __glewEnableVertexArrayAttrib
+VertexArray.obj : error LNK2001: unresolved external symbol __glewBindVertexArray
+VertexArray.obj : error LNK2001: unresolved external symbol __glewDeleteVertexArrays
+VertexArray.obj : error LNK2001: unresolved external symbol __glewGenVertexArrays
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewBindBuffer
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewBufferData
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewBufferData
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewDeleteBuffers
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewDeleteBuffers
+VertexBuffer.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+IndexBuffer.obj : error LNK2001: unresolved external symbol __glewGenBuffers
+main.obj : error LNK2019: unresolved external symbol glewInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetWindowSize referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
+Shader.obj : error LNK2001: unresolved external symbol __glewAttachShader
+Shader.obj : error LNK2001: unresolved external symbol __glewCompileShader
+Shader.obj : error LNK2001: unresolved external symbol __glewCreateProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewCreateShader
+Shader.obj : error LNK2001: unresolved external symbol __glewDeleteProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewDeleteShader
+Shader.obj : error LNK2001: unresolved external symbol __glewGetUniformLocation
+Shader.obj : error LNK2001: unresolved external symbol __glewLinkProgram
+Shader.obj : error LNK2001: unresolved external symbol __glewShaderSource
+Shader.obj : error LNK2001: unresolved external symbol __glewUniform4f
+Shader.obj : error LNK2001: unresolved external symbol __glewUniformMatrix4fv
+Shader.obj : error LNK2001: unresolved external symbol __glewUseProgram
+C:\Proj\FrogEngine\Dependencies\GLFW\lib\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Proj\FrogEngine\Dependencies\GLEW\lib\Release\Win32\glew32s.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Proj\FrogEngine\x64\Debug\FrogEngine.exe : fatal error LNK1120: 31 unresolved externals
