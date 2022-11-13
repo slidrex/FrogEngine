@@ -4,3 +4,4 @@
 #define FROG_WARN(...) ::spdlog::warn(__VA_ARGS__);
 #define FROG_ERROR(...) ::spdlog::error(__VA_ARGS__);
 #define FROG_CRITICAL(...) ::spdlog::critical(__VA_ARGS__);
+#define print(...) ::spdlog::info(__VA_ARGS__);

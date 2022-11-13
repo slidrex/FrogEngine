@@ -16,13 +16,12 @@ int Shader::GetUniformLocation(const std::string& name) const
 	return location;
 }
 
-Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
+Shader::Shader(const std::string& vertexSource, const std::string& fragmentSource)
 {
-	unsigned int fragmentShader, vertexShader;
-	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	std::string vertexSource = FrogEngine::ParseFile(vertexPath);
-	std::string fragmentSource = FrogEngine::ParseFile(fragmentPath);
+	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	
+	
 	const char* vertexSrc = vertexSource.c_str();
 	const char* fragmentSrc = fragmentSource.c_str();
 	glShaderSource(fragmentShader, 1, &fragmentSrc, nullptr);

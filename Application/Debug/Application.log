@@ -1,11 +1,14 @@
-﻿  HelloTriangle.cpp
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (ExampleEngine.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  HelloTriangle.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Proj\FrogEngine\Dependencies\GLFW\include\glfw3.h(123): message : see previous definition of 'APIENTRY'
+C:\Proj\FrogEngine\Application\HelloTriangle.cpp(31,28): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Proj\FrogEngine\Application\HelloTriangle.cpp(41,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   source.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Proj\FrogEngine\Dependencies\GLFW\include\glfw3.h(123): message : see previous definition of 'APIENTRY'
   Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+MSVCRTD.lib(initializers.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+MSVCRTD.lib(initializers.obj) : warning LNK4098: defaultlib 'libcmt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Proj\FrogEngine\Debug\vc120.pdb'; linking object as if no debug info
   Application.vcxproj -> C:\Proj\FrogEngine\Debug\Application.exe

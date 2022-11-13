@@ -11,6 +11,7 @@ void FrogEngine::EntryPoint::Run()
 {
 	InitOpenGLContext(m_application);
 	m_application->PreRender();
+	
 	OpenGLRenderUpdate(m_application);
 	
 }
@@ -29,7 +30,6 @@ void FrogEngine::EntryPoint::Run()
 		glfwMakeContextCurrent(application->m_Window);
 
 		if (glewInit() != GLEW_OK) FROG_CRITICAL("GLEW is not setup.");
-		FrogEngine::InitDebugger();
 		return;
 	}
 
@@ -38,6 +38,7 @@ void FrogEngine::EntryPoint::Run()
 		while (glfwWindowShouldClose(application->m_Window) == false)
 		{
 			application->RenderUpdate();
+			FrogEngine::InitDebugger();
 			
 
 			glfwSwapBuffers(application->m_Window);
