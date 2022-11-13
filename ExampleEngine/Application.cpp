@@ -12,6 +12,7 @@ void FrogEngine::EntryPoint::Run()
 	InitOpenGLContext(m_application);
 	m_application->PreRender();
 	OpenGLRenderUpdate(m_application);
+	
 }
 
 	void InitOpenGLContext(FrogEngine::Application* application)

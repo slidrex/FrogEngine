@@ -89,6 +89,10 @@
   <ItemGroup>
     <ClInclude Include="HelloTriangle.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.frag" />
+    <None Include="Basic.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

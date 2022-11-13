@@ -1,9 +1,14 @@
 c:\proj\frogengine\application\debug\vc143.pdb
 c:\proj\frogengine\application\debug\vc143.idb
-c:\proj\frogengine\application\debug\main.obj
+c:\proj\frogengine\application\debug\entrypoint.obj
+c:\proj\frogengine\application\debug\application.obj
+c:\proj\frogengine\application\debug\source.obj
+c:\proj\frogengine\application\debug\hellotriangle.obj
 c:\proj\frogengine\debug\application.exe
 c:\proj\frogengine\application\debug\application.ilk
 c:\proj\frogengine\debug\application.pdb
+c:\proj\frogengine\application\debug\doom.obj
+c:\proj\frogengine\application\debug\main.obj
 c:\proj\frogengine\application\debug\application.tlog\cl.command.1.tlog
 c:\proj\frogengine\application\debug\application.tlog\cl.read.1.tlog
 c:\proj\frogengine\application\debug\application.tlog\cl.write.1.tlog

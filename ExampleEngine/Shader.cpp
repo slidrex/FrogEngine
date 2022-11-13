@@ -1,6 +1,7 @@
 #include <glew.h>
 #include "Shader.h"
 #include "FrogEngineFileParser.h"
+#include "Log.h"
 
 using namespace FrogEngine;
 
@@ -10,14 +11,13 @@ int Shader::GetUniformLocation(const std::string& name) const
 	{
 		return uniformLocationCache[name];
 	}
-	int location = glGetUniformLocation(shader_program, name.c_str());
+	int location = glGetUniformLocation(m_Shader, name.c_str());
 	uniformLocationCache[name] = location;
 	return location;
 }
 
 Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 {
-	unsigned int shader;
 	unsigned int fragmentShader, vertexShader;
 	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -29,14 +29,26 @@ Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 	glShaderSource(vertexShader, 1, &vertexSrc, nullptr);
 	glCompileShader(vertexShader);
 	glCompileShader(fragmentShader);
-	fragment_shader = fragmentShader;
-	vertex_shader = vertexShader;
-	shader = glCreateProgram();
-	glAttachShader(shader, fragmentShader);
-	glAttachShader(shader, vertexShader);
-	glLinkProgram(shader);
-	shader_program = shader;
+
+	GLint compileStatus;
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &compileStatus);
 	
+	if (compileStatus == GL_FALSE) FROG_CRITICAL("Fragment shader error: {0}",  GetShaderInfoLog(fragmentShader));
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &compileStatus);
+	if (compileStatus == GL_FALSE) FROG_CRITICAL("Vertex shader error: {0}", GetShaderInfoLog(vertexShader));
+
+	m_Shader = glCreateProgram();
+	glAttachShader(m_Shader, fragmentShader);
+	glAttachShader(m_Shader, vertexShader);
+	glLinkProgram(m_Shader);
+}
+char* FrogEngine::Shader::GetShaderInfoLog(GLint shader)
+{
+	GLint length;
+	glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &length);
+	char *log = new char[length];
+	glGetShaderInfoLog(shader, length, &length, log);
+	return log;
 }
 void Shader::SetUniform4f(const std::string& name, float f1, float f2, float f3, float f4)
 {
@@ -49,13 +61,11 @@ void Shader::SetMatrix4f(const std::string& name, const glm::mat4& matrix)
 Shader::~Shader()
 {
 	Unbind();
-	glDeleteShader(vertex_shader);
-	glDeleteShader(fragment_shader);
-	glDeleteProgram(shader_program);
+	glDeleteProgram(m_Shader);
 }
 const void Shader::Bind()
 {
-	glUseProgram(shader_program);
+	glUseProgram(m_Shader);
 }
 const void Shader::Unbind()
 {

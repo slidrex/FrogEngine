@@ -8,9 +8,6 @@
     <Filter Include="src\Render">
       <UniqueIdentifier>{f93f927d-a364-4337-96f2-bc7ea33fe875}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\shaders">
-      <UniqueIdentifier>{d2e2c208-145b-4e11-a75c-6834f3d1126c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Debug">
       <UniqueIdentifier>{14839d0e-7da0-4ee3-b169-9a6a51232639}</UniqueIdentifier>
     </Filter>
@@ -72,13 +69,5 @@
     <ClInclude Include="Application.h">
       <Filter>src</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Basic.vert">
-      <Filter>src\shaders</Filter>
-    </None>
-    <None Include="Basic.frag">
-      <Filter>src\shaders</Filter>
-    </None>
   </ItemGroup>
 </Project>

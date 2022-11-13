@@ -10,6 +10,6 @@ void Renderer::Draw(RenderMode renderMode, FrogEngine::VertexArray& vertexArray,
 {
 	vertexArray.Bind();
 	indexBuffer.Bind();
-	shader.Bind();
+	//shader.Bind();
 	glDrawElements(renderMode, indexBuffer.GetCount(), GL_UNSIGNED_INT, nullptr);
 }

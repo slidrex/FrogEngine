@@ -19,9 +19,8 @@ namespace FrogEngine
 		void SetUniform4f(const std::string& name, float f1, float f2, float f3, float f4);
 	private:
 		mutable std::unordered_map<std::string, int> uniformLocationCache;
-		unsigned int shader_program;
-		unsigned int vertex_shader;
-		unsigned int fragment_shader;
+		unsigned int m_Shader;
+		char* GetShaderInfoLog(GLint shader);
 		int GetUniformLocation(const std::string &name) const;
 	};
 	enum ShaderType

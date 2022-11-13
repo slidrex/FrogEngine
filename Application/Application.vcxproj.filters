@@ -13,6 +13,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="src\shaders">
+      <UniqueIdentifier>{57756918-abb0-47a3-b5c5-193bcb33ceea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source.cpp">
@@ -26,5 +29,13 @@
     <ClInclude Include="HelloTriangle.h">
       <Filter>src</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.vert">
+      <Filter>src\shaders</Filter>
+    </None>
+    <None Include="Basic.frag">
+      <Filter>src\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

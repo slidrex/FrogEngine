@@ -26,9 +26,14 @@ void HelloTriangle::PreRender()
 	vertexBuffer = new VertexBuffer(positions, sizeof(positions));
 	vertexArray = new VertexArray(*vertexBuffer, 2);
 	indexBuffer = new IndexBuffer(indeces, sizeof(indeces));
-	shader = new Shader(ParseFile("ExampleEngine/Basic.vert"), ParseFile("ExampleEngine/Basic.frag"));
-	(*shader).Bind();
+
 	renderer = new Renderer();
+	shader = new Shader(ParseFile("Basic.vert"), ParseFile("Basic.frag"));
+
+	//(*shader).Bind();
+
+	//(*shader).SetMatrix4f("u_MVP", projection);
+	//(*shader).SetUniform4f("u_Color", 0.5f, 0.5f, 1, 1);
 }
 void HelloTriangle::RenderUpdate()
 {
