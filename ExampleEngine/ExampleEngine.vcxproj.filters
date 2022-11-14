@@ -37,6 +37,9 @@
     <ClCompile Include="Application.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="InputEvents.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h">
@@ -67,6 +70,9 @@
       <Filter>src\Debug</Filter>
     </ClInclude>
     <ClInclude Include="Application.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="InputEvents.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

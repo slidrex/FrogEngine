@@ -1,11 +1,13 @@
 #pragma once
 #include "glfw3.h"
+#include "InputEvents.h"
 
 namespace FrogEngine
 {
 	class Application
 	{
 	public:
+		InputSystem* Input;
 		GLFWwindow* m_Window;
 		/// <summary>
 		/// Runs before render loop

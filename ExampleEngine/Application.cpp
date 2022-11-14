@@ -10,6 +10,7 @@ void OpenGLRenderUpdate(FrogEngine::Application* application);
 void FrogEngine::EntryPoint::Run()
 {
 	InitOpenGLContext(m_application);
+	m_application->Input = new InputSystem((*m_application).m_Window);
 	m_application->PreRender();
 	
 	OpenGLRenderUpdate(m_application);

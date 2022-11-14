@@ -1,8 +1,6 @@
 #include <FrogEngine.h>
 #include "HelloTriangle.h"
 #include <FrogEngineFileParser.h>
-#include <ctime>
-#include <cstdlib>
 
 using namespace FrogEngine;
 
@@ -22,13 +20,10 @@ VertexArray* vertexArray;
 IndexBuffer* indexBuffer;
 Shader* shader;
 Renderer* renderer;
-float position = 0;
-bool raises;
-bool topdownMove;
-float accelerationMultiplier = 1;
 
-float AccelerationIncreaseRate = 0.03f;
-float TriangleSpeed = 0.003;
+glm::vec3* position;
+
+float TriangleSpeed = 0.01;
 
 void HelloTriangle::PreRender()
 {
@@ -37,63 +32,38 @@ void HelloTriangle::PreRender()
 	indexBuffer = new IndexBuffer(indeces, sizeof(indeces));
 
 	renderer = new Renderer();
+	position = new glm::vec3(0, 0, 0);
 	shader = new Shader(ParseFile("Basic.vert"), ParseFile("Basic.frag"));
-	std::srand(time(NULL));
-	topdownMove = std::rand() % 2;
-	raises = std::rand() % 2;
 }
 void HelloTriangle::RenderUpdate()
 {
 	(*renderer).Clear();
+	if(Input->IsKeyPressed(GLFW_KEY_W) && position->y < 0.5)
+	{
+		position->y += TriangleSpeed;
+	}
+	if (Input->IsKeyPressed(GLFW_KEY_A) && position->x > -0.5)
+	{
+		position->x -= TriangleSpeed;
+	}
+	if (Input->IsKeyPressed(GLFW_KEY_S) && position->y > -1)
+	{
+		position->y -= TriangleSpeed;
+	}
+	if (Input->IsKeyPressed(GLFW_KEY_D) && position->x < 0.5)
+	{
+		position->x += TriangleSpeed;
+	}
+	glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0, 0, 0));
 	glm::mat4 projection = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f);
-	glm::vec3 moveVector(0, 0, 0);
-
-	HandleCollisions(moveVector);
-	SpeedCalculation();
-
-	glm::mat4 viewMat = glm::translate(glm::mat4(1), moveVector);
 	
-	(*shader).SetMatrix4f("u_MVP", viewMat * projection);
+
+
+	glm::mat4 modelMatrix = glm::translate(glm::mat4(1), *position);
+	
+	(*shader).SetMatrix4f("u_MVP", view * projection * modelMatrix);
 	(*shader).SetUniform4f("u_Color", 0.5f, 0.5f, 1, 1);
 	(*renderer).Draw(RenderMode::Triangles, *vertexArray, *indexBuffer, *shader);
-}
-void HelloTriangle::HandleCollisions(glm::vec3 &moveVector)
-{
-	if (topdownMove)
-	{
-		moveVector.y = position;
-		if (moveVector.y < -1)
-		{
-			accelerationMultiplier = 1;
-			raises = true;
-		}
-		if (moveVector.y > 0.5)
-		{
-			accelerationMultiplier = 1;
-			raises = false;
-		}
-	}
-	else
-	{
-		moveVector.x = position;
-		if (moveVector.x < -0.5)
-		{
-			accelerationMultiplier = 1;
-			raises = true;
-		}
-		if (moveVector.x > 0.5)
-		{
-			accelerationMultiplier = 1;
-			raises = false;
-		}
-	}
-}
-void HelloTriangle::SpeedCalculation()
-{
-	accelerationMultiplier += AccelerationIncreaseRate;
-	if (raises == true) position += TriangleSpeed * accelerationMultiplier;
-	else position -= TriangleSpeed * accelerationMultiplier;
-
 }
 void HelloTriangle::OnClose()
 {
