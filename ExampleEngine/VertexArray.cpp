@@ -1,16 +1,17 @@
+#pragma once
 #include "glew.h"
 #include "VertexArray.h"
+#include "VertexBuffer.h"
+
 
 FrogEngine::VertexArray::VertexArray(FrogEngine::VertexBuffer buffer, unsigned int stride)
 {
 	buffer.Bind();
 	glGenVertexArrays(1, &ID);
 	glBindVertexArray(ID);
-	unsigned int currentLocation = locations.size();
-	locations.push_back(currentLocation);
-	glEnableVertexArrayAttrib(ID, currentLocation);
+	glEnableVertexArrayAttrib(ID, 0);
 
-	glVertexAttribPointer(currentLocation, stride, GL_FLOAT, GL_FALSE, stride * sizeof(float), NULL);
+	glVertexAttribPointer(0, stride, GL_FLOAT, GL_FALSE, stride * sizeof(float), NULL);
 
 	buffer.Unbind();
 	Unbind();

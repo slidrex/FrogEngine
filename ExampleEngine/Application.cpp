@@ -29,8 +29,8 @@ void FrogEngine::EntryPoint::Run()
 
 
 		glfwMakeContextCurrent(application->m_Window);
-
 		if (glewInit() != GLEW_OK) FROG_CRITICAL("GLEW is not setup.");
+		FrogEngine::InitDebugger();
 		return;
 	}
 

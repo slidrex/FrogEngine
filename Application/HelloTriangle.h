@@ -1,3 +1,4 @@
+#pragma once
 #include <Application.h>
 
 class HelloTriangle : public FrogEngine::Application

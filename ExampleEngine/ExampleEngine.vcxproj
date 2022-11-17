@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ErrorCatcher.cpp" />
     <ClCompile Include="FrogEngineFileParser.cpp" />
     <ClCompile Include="InputEvents.cpp" />
@@ -91,11 +92,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="ErrorCatcher.h" />
     <ClInclude Include="FrogEngine.h" />
     <ClInclude Include="FrogEngineFileParser.h" />
     <ClInclude Include="InputEvents.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="IndexBuffer.h" />
