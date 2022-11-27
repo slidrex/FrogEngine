@@ -18,12 +18,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic.vert">
+    <None Include="Basicf.shader">
       <Filter>src\shaders</Filter>
     </None>
-    <None Include="Basic.frag">
-      <Filter>src\shaders</Filter>
-    </None>
+    <None Include="Basicv.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelloTriangle.h">

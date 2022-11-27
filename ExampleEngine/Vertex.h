@@ -4,15 +4,18 @@
 
 struct Vertex2f
 {
-	glm::vec2 positions;
+	glm::vec2 position;
+	glm::vec2 textureCoord;
 
 	Vertex2f()
 	{
-		positions = glm::vec2(0.0f, 0.0f);
+		position = glm::vec2(0.0f, 0.0f);
+		textureCoord = glm::vec2();
 	}
-	Vertex2f(float x, float y)
+	Vertex2f(float x, float y, glm::vec2 texCoord = glm::vec2())
 	{
-		positions.x = x;
-		positions.y = y;
+		position.x = x;
+		position.y = y;
+		textureCoord = texCoord;
 	}
 };

@@ -84,6 +84,8 @@
     <ClCompile Include="ErrorCatcher.cpp" />
     <ClCompile Include="FrogEngineFileParser.cpp" />
     <ClCompile Include="InputEvents.cpp" />
+    <ClCompile Include="image.h" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexArray.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
@@ -92,12 +94,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="BufferLayout.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ErrorCatcher.h" />
     <ClInclude Include="FrogEngine.h" />
     <ClInclude Include="FrogEngineFileParser.h" />
     <ClInclude Include="InputEvents.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexArray.h" />
     <ClInclude Include="VertexBuffer.h" />

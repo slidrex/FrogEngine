@@ -90,8 +90,8 @@
     <ClInclude Include="HelloTriangle.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic.frag" />
-    <None Include="Basic.vert" />
+    <None Include="Basicf.shader" />
+    <None Include="Basicv.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

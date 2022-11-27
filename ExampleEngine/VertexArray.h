@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "VertexBuffer.h"
+#include "BufferLayout.h"
 
 namespace FrogEngine
 {
@@ -9,7 +10,7 @@ namespace FrogEngine
 	private:
 		unsigned int ID;
 	public:
-		VertexArray(VertexBuffer buffer, unsigned int stride);
+		VertexArray(VertexBuffer buffer, BufferLayout layout);
 		~VertexArray();
 		void Bind() const;
 		void Unbind() const;

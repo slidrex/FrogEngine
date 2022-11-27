@@ -11,6 +11,9 @@
     <Filter Include="src\Debug">
       <UniqueIdentifier>{14839d0e-7da0-4ee3-b169-9a6a51232639}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Additional">
+      <UniqueIdentifier>{508ff1e1-57da-4580-bd92-be4d07a5a6a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IndexBuffer.cpp">
@@ -41,6 +44,12 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="image.h">
+      <Filter>src\Additional</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
       <Filter>src\Render</Filter>
     </ClCompile>
   </ItemGroup>
@@ -82,6 +91,15 @@
       <Filter>src\Render</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>src\Additional</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferLayout.h">
       <Filter>src\Render</Filter>
     </ClInclude>
   </ItemGroup>

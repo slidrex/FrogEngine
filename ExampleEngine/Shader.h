@@ -16,6 +16,7 @@ namespace FrogEngine
 		const void Bind();
 		const void Unbind();
 		void SetMatrix4f(const std::string& name, const glm::mat4& matrix);
+		void SetUniform1i(const std::string& name, const int i);
 		void SetUniform4f(const std::string& name, float f1, float f2, float f3, float f4);
 	private:
 		mutable std::unordered_map<std::string, int> uniformLocationCache;
