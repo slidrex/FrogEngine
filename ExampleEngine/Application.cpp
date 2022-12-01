@@ -6,11 +6,18 @@
 void InitOpenGLContext(FrogEngine::Application* application);
 void OpenGLRenderUpdate(FrogEngine::Application* application);
 
+FrogEngine::Application* FrogEngine::Application::s_Instance = nullptr;
+
+FrogEngine::Application::Application()
+{
+	FrogEngine::Application::s_Instance = this;
+	Window = nullptr;
+}
 
 void FrogEngine::EntryPoint::Run()
 {
 	InitOpenGLContext(m_application);
-	m_application->Input = new InputSystem((*m_application).m_Window);
+
 	m_application->PreRender();
 	
 	OpenGLRenderUpdate(m_application);
@@ -25,10 +32,10 @@ void FrogEngine::EntryPoint::Run()
 			return;
 		}
 		int windowWeight = 640, windowHeight = 480;
-		application->m_Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", glfwGetPrimaryMonitor(), NULL);
+		application->Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", NULL, NULL);
 
 
-		glfwMakeContextCurrent(application->m_Window);
+		glfwMakeContextCurrent(application->Window);
 		if (glewInit() != GLEW_OK) FROG_CRITICAL("GLEW is not setup.");
 		FrogEngine::InitDebugger();
 		return;
@@ -36,14 +43,16 @@ void FrogEngine::EntryPoint::Run()
 
 	void OpenGLRenderUpdate(FrogEngine::Application* application)
 	{
-		while (glfwWindowShouldClose(application->m_Window) == false)
+		while (glfwWindowShouldClose(application->Window) == false)
 		{
-			application->RenderUpdate();
+			float beginTime = glfwGetTime();
+			application->RenderUpdate(application->deltaTime);
 			FrogEngine::InitDebugger();
-			
 
-			glfwSwapBuffers(application->m_Window);
+			glfwSwapBuffers(application->Window);
 			glfwPollEvents();
+			float endTime = glfwGetTime();
+			application->deltaTime = endTime - beginTime;
 		}
 		application->OnClose();
 		glfwTerminate();

@@ -6,5 +6,5 @@ class HelloTriangle : public FrogEngine::Application
 public:
 	void PreRender() override;
 	void OnClose() override;
-	void RenderUpdate() override;
+	void RenderUpdate(float deltaTime) override;
 };

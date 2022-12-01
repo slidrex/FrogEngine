@@ -1,14 +1,15 @@
 #pragma once
 #include "glfw3.h"
-#include "InputEvents.h"
 
 namespace FrogEngine
 {
 	class Application
 	{
 	public:
-		InputSystem* Input;
-		GLFWwindow* m_Window;
+		Application();
+		static Application& GetApplication()  { return *s_Instance; }
+		GLFWwindow* Window;
+		
 		/// <summary>
 		/// Runs before render loop
 		/// </summary>
@@ -16,11 +17,14 @@ namespace FrogEngine
 		/// <summary>
 		/// Runs render loop
 		/// </summary>
-		virtual void RenderUpdate() { }
+		virtual void RenderUpdate(float deltaTime) { }
 		/// <summary>
 		/// Calls before application quit
 		/// </summary>
 		virtual void OnClose() { }
+		float deltaTime;
+	private:
+		static Application* s_Instance;
 	};
 	class EntryPoint
 	{

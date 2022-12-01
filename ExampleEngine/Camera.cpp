@@ -19,5 +19,5 @@ void FrogEngine::Camera::Zoom(float scale)
 }
 glm::mat4 FrogEngine::Camera::GetCameraProjection()
 {
-	return glm::translate(glm::mat4(1), m_Position) * glm::ortho(m_Projection.x, m_Projection.y, m_Projection.z, m_Projection.w);
+	return glm::ortho(m_Projection.x, m_Projection.y, m_Projection.z, m_Projection.w) * glm::translate(glm::mat4(1), m_Position);
 }

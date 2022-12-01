@@ -40,9 +40,6 @@
     <ClCompile Include="Application.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="InputEvents.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>src\Render</Filter>
     </ClCompile>
@@ -51,6 +48,9 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>src\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,7 +84,7 @@
     <ClInclude Include="Application.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="InputEvents.h">
+    <ClInclude Include="Events.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">

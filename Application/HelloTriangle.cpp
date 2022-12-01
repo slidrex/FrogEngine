@@ -29,7 +29,7 @@ Shader* shader;
 Renderer* renderer;
 
 int flip = 1;
-float TriangleSpeed = 0.01f;
+float TriangleSpeed = 1.0f;
 float xPos, yPos;
 
 void HelloTriangle::PreRender()
@@ -38,7 +38,7 @@ void HelloTriangle::PreRender()
 	renderer = new Renderer();
 
 
-	//Quad quad = CreateQuad(0.5f, 0.0f, 0.5f, 0.5f);
+	Quad quad = CreateQuad(0.5f, 0.0f, 0.5f, 0.5f);
 	
 
 	BufferLayout layout;
@@ -63,41 +63,39 @@ void HelloTriangle::PreRender()
 	FROG_LOG("Press arrows to move a camera");
 	FROG_LOG("Press C/V to zoom a camera");
 }
-void HelloTriangle::RenderUpdate()
+void HelloTriangle::RenderUpdate(float deltaTime)
 {
 	(*renderer).Clear();
 	shader->Bind();
 
-	if(Input->IsKeyPressed(GLFW_KEY_UP))
+	if(Input::IsKeyPressed(GLFW_KEY_UP))
 	{
-		yPos += TriangleSpeed;
+		yPos += TriangleSpeed * deltaTime;
 	}
-	if (Input->IsKeyPressed(GLFW_KEY_LEFT))
+	if (Input::IsKeyPressed(GLFW_KEY_LEFT))
 	{
-		xPos -= TriangleSpeed;
-		camera->m_Projection.x = 1.6 * flip;
-		camera->m_Projection.y = 1.6 * -flip;
+		xPos -= TriangleSpeed * deltaTime;
 	}
-	if (Input->IsKeyPressed(GLFW_KEY_DOWN))
+	if (Input::IsKeyPressed(GLFW_KEY_DOWN))
 	{
-		yPos -= TriangleSpeed;
+		yPos -= TriangleSpeed * deltaTime;
 	}
-	if (Input->IsKeyPressed(GLFW_KEY_RIGHT))
+	if (Input::IsKeyPressed(GLFW_KEY_RIGHT))
 	{
-		xPos += TriangleSpeed;
-		camera->m_Projection.x = 1.6 * -flip;
-		camera->m_Projection.y = 1.6 * flip;
+		xPos += TriangleSpeed * deltaTime;
 	}
-	if(Input->IsKeyPressed(GLFW_KEY_C))
+	if(Input::IsKeyPressed(GLFW_KEY_C))
 	{
-		camera->Zoom(TriangleSpeed);
+		camera->Zoom(TriangleSpeed * deltaTime);
 	}
-	if (Input->IsKeyPressed(GLFW_KEY_V))
+	if (Input::IsKeyPressed(GLFW_KEY_V))
 	{
-		camera->Zoom(-TriangleSpeed);
+		camera->Zoom(-TriangleSpeed * deltaTime);
 	}
+	
+
 	glm::mat4 ghostPos = glm::translate(glm::mat4(1), glm::vec3(xPos, yPos, 0));
-	(*shader).SetMatrix4f("u_MVP", ghostPos * camera->GetCameraProjection());
+	(*shader).SetMatrix4f("u_MVP", camera->GetCameraProjection() * ghostPos);
 	(*renderer).Draw(*vertexArray, *indexBuffer, *shader);
 }
 void HelloTriangle::OnClose()
