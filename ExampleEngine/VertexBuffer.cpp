@@ -2,6 +2,13 @@
 
 using namespace FrogEngine;
 
+VertexBuffer::VertexBuffer(GLuint size)
+{
+	glGenBuffers(1, &m_ID);
+	Bind();
+
+	glBufferData(GL_ARRAY_BUFFER, size, nullptr, GL_DYNAMIC_DRAW);
+}
 
 VertexBuffer::VertexBuffer(Vertex2f* verteces, GLuint vertexCount)
 {
@@ -11,10 +18,10 @@ VertexBuffer::VertexBuffer(Vertex2f* verteces, GLuint vertexCount)
 
 	for(int i = 0; i < vertexCount; i++)
 	{
-		*(positions + i * 2) = (verteces + i)->position.x;
-		*(positions + i * 2 + 1) = (verteces + i)->position.y;
+		//*(positions + i * 2) = (verteces + i)->position.x;
+		//*(positions + i * 2 + 1) = (verteces + i)->position.y;
 	}
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 2 * vertexCount, positions, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex2f) * vertexCount, positions, GL_STATIC_DRAW);
 }
 
 VertexBuffer::VertexBuffer(const void *positions, unsigned int size)

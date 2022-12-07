@@ -4,7 +4,7 @@
 #include "VertexBuffer.h"
 
 
-FrogEngine::VertexArray::VertexArray(FrogEngine::VertexBuffer buffer, BufferLayout layout)
+FrogEngine::VertexArray::VertexArray(FrogEngine::VertexBuffer& buffer, BufferLayout layout)
 {
 	buffer.Bind();
 	glGenVertexArrays(1, &ID);

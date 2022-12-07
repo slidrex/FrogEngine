@@ -1,21 +1,23 @@
 #pragma once
 #include "glm/glm.hpp"
-#include <array>
 
 struct Vertex2f
 {
-	glm::vec2 position;
-	glm::vec2 textureCoord;
-
+	float position[2];
+	float texCoords[2];
+	
 	Vertex2f()
 	{
-		position = glm::vec2(0.0f, 0.0f);
-		textureCoord = glm::vec2();
+		position[0] = 0;
+		position[1] = 0;
+		texCoords[0] = 0;
+		texCoords[1] = 0;
 	}
-	Vertex2f(float x, float y, glm::vec2 texCoord = glm::vec2())
+	Vertex2f(float x, float y, float textureX, float textureY)
 	{
-		position.x = x;
-		position.y = y;
-		textureCoord = texCoord;
+		position[0] = x;
+		position[1] = y;
+		texCoords[0] = textureX;
+		texCoords[1] = textureY;
 	}
 };

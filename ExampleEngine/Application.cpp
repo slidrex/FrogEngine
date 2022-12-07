@@ -10,6 +10,7 @@ FrogEngine::Application* FrogEngine::Application::s_Instance = nullptr;
 
 FrogEngine::Application::Application()
 {
+	deltaTime = 0;
 	FrogEngine::Application::s_Instance = this;
 	Window = nullptr;
 }
@@ -31,8 +32,8 @@ void FrogEngine::EntryPoint::Run()
 			FROG_CRITICAL("GLEW is not setup.");
 			return;
 		}
-		int windowWeight = 640, windowHeight = 480;
-		application->Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", NULL, NULL);
+		int windowWeight = 1920, windowHeight = 1080;
+		application->Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", glfwGetPrimaryMonitor(), NULL);
 
 
 		glfwMakeContextCurrent(application->Window);

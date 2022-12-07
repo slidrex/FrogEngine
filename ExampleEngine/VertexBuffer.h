@@ -8,8 +8,9 @@ namespace FrogEngine
 	private:
 		unsigned int m_ID;
 	public:
-		VertexBuffer(const void* positions, unsigned int size);
 		VertexBuffer(Vertex2f *verteces, GLuint vertexCount);
+		VertexBuffer(GLuint size);
+		VertexBuffer(const void* positions, unsigned int size);
 		~VertexBuffer();
 		void Bind() const;
 		void Unbind() const;

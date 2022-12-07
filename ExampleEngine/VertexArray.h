@@ -10,7 +10,7 @@ namespace FrogEngine
 	private:
 		unsigned int ID;
 	public:
-		VertexArray(VertexBuffer buffer, BufferLayout layout);
+		VertexArray(VertexBuffer& buffer, BufferLayout layout);
 		~VertexArray();
 		void Bind() const;
 		void Unbind() const;

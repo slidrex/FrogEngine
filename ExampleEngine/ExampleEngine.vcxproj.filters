@@ -102,5 +102,6 @@
     <ClInclude Include="BufferLayout.h">
       <Filter>src\Render</Filter>
     </ClInclude>
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
 </Project>

@@ -29,7 +29,7 @@ namespace FrogEngine
 	class BufferLayout
 	{
 	private:
-		float m_stride;
+		unsigned int m_stride;
 	public:
 		inline unsigned int GetStride() const { return m_stride; }
 		std::vector<LayoutElement> Elements;

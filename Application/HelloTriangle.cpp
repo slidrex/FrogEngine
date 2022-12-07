@@ -2,23 +2,15 @@
 #include "HelloTriangle.h"
 #include <FrogEngineFileParser.h>
 #include <Camera.h>
-#include <Texture.h>
+#include <Transform.h>
 
 using namespace FrogEngine;
-
-float positions[]
-{
-	-0.5f, -0.5f, 0.0f, 0.0f,
-	-0.5f, 0.5f, 0.0f, 1.0f,
-	0.5f, 0.5f, 1.0f, 1.0f,
-	0.5f, -0.5f, 1.0f, 0.0f
-};
 
 
 unsigned int indeces[]
 {
 	0, 1, 2,
-	0, 3, 2
+	2, 3, 0
 };
 
 Camera* camera;
@@ -26,76 +18,109 @@ VertexBuffer* vertexBuffer;
 VertexArray* vertexArray;
 IndexBuffer* indexBuffer;
 Shader* shader;
+Quad* quad;
 Renderer* renderer;
 
-int flip = 1;
 float TriangleSpeed = 1.0f;
-float xPos, yPos;
+Transform *transform;
 
 void HelloTriangle::PreRender()
 {
-	camera = new Camera(glm::vec3(0.0f, 0.0f, 0.0f), -1.6, 1.6, -1.2, 1.2);
 	renderer = new Renderer();
+	camera = new Camera(glm::vec3(0.0f, 0.0f, 0.0f), -1.6f, 1.6f, -1.2f, 1.2f);
 
 
-	Quad quad = CreateQuad(0.5f, 0.0f, 0.5f, 0.5f);
-	
-
+	vertexBuffer = new VertexBuffer(sizeof(Vertex2f) * 4);
 	BufferLayout layout;
-	vertexBuffer = new VertexBuffer(positions, 4 * sizeof(float) * 4);
-	layout.Push<float>(2); //verteces position
-	layout.Push<float>(2); //texture coordinates
+	layout.Push<float>(2);
+	layout.Push<float>(2);
+
 	vertexArray = new VertexArray(*vertexBuffer, layout);
-	xPos = 0;
-	yPos = 0;
+	vertexBuffer->Bind();
+
+	transform = new Transform(glm::vec3(), glm::vec3(1.0f, 1.0f, 0.0f), glm::vec3());
 	
-	indexBuffer = new IndexBuffer(indeces, sizeof(indeces));
+	indexBuffer = new IndexBuffer(indeces, 6);
+
 	shader = new Shader(ParseFile("Basicv.shader"), ParseFile("Basicf.shader"));
 	shader->Bind();
-	
-	Texture texture = Texture("images/ghost.png");
-	texture.Bind(0);
+	print("Z/V to zoom the camera");
+	print("1/2 to scale along X axis");
+	print("3/4 to scale along Y axis");
+	print("W/A/S/D to change position of the quad");
+	print("R/T to rotate the quad along Z axis");
+	print("I: to get all the transform information");
 
-	shader->SetUniform1i("u_TexturePixels", 0);
+	quad = CreateQuad(0.0f, 0.0f, 2.0f, 2.0f);
+	quad->SetTexture("images/img.jpg", 0, *shader, "u_TexturePixels");
+
 	shader->Unbind();
-
-
-	FROG_LOG("Press arrows to move a camera");
-	FROG_LOG("Press C/V to zoom a camera");
 }
 void HelloTriangle::RenderUpdate(float deltaTime)
 {
 	(*renderer).Clear();
 	shader->Bind();
+	vertexBuffer->Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(quad->verteces), quad->verteces);
 
-	if(Input::IsKeyPressed(GLFW_KEY_UP))
+	if(Input::IsKeyPressed(GLFW_KEY_D))
 	{
-		yPos += TriangleSpeed * deltaTime;
+		transform->position.x += deltaTime;
 	}
-	if (Input::IsKeyPressed(GLFW_KEY_LEFT))
+	if (Input::IsKeyPressed(GLFW_KEY_A))
 	{
-		xPos -= TriangleSpeed * deltaTime;
+		transform->position.x -= deltaTime;
 	}
-	if (Input::IsKeyPressed(GLFW_KEY_DOWN))
+	if (Input::IsKeyPressed(GLFW_KEY_W))
 	{
-		yPos -= TriangleSpeed * deltaTime;
+		transform->position.y += deltaTime;
 	}
-	if (Input::IsKeyPressed(GLFW_KEY_RIGHT))
+	if (Input::IsKeyPressed(GLFW_KEY_S))
 	{
-		xPos += TriangleSpeed * deltaTime;
+		transform->position.y -= deltaTime;
 	}
-	if(Input::IsKeyPressed(GLFW_KEY_C))
+	if(Input::IsKeyPressed(GLFW_KEY_R))
 	{
-		camera->Zoom(TriangleSpeed * deltaTime);
+		transform->rotation.z += deltaTime;
+	}
+	if (Input::IsKeyPressed(GLFW_KEY_T))
+	{
+		transform->rotation.z -= deltaTime;
+	}
+
+	if(Input::IsKeyPressed(GLFW_KEY_1))
+	{
+		transform->scale.x += deltaTime;
+	}
+	if (Input::IsKeyPressed(GLFW_KEY_2))
+	{
+		transform->scale.x -= deltaTime;
+	}
+	if (Input::IsKeyPressed(GLFW_KEY_3))
+	{
+		transform->scale.y += deltaTime;
+	}
+	if (Input::IsKeyPressed(GLFW_KEY_4))
+	{
+		transform->scale.y -= deltaTime;
+	}
+	if(Input::IsKeyPressed(GLFW_KEY_Z))
+	{
+		camera->Zoom(deltaTime);
 	}
 	if (Input::IsKeyPressed(GLFW_KEY_V))
 	{
-		camera->Zoom(-TriangleSpeed * deltaTime);
+		camera->Zoom(-deltaTime);
 	}
-	
+	if (Input::IsKeyPressed(GLFW_KEY_I))
+	{
+		print("");
+		print("Position: ({0},{1})", transform->position.x, transform->position.y);
+		print("Scale: ({0},{1})", transform->scale.x, transform->scale.y);
+		print("Rotation: ({0})", transform->rotation.z);
+	}
 
-	glm::mat4 ghostPos = glm::translate(glm::mat4(1), glm::vec3(xPos, yPos, 0));
-	(*shader).SetMatrix4f("u_MVP", camera->GetCameraProjection() * ghostPos);
+	(*shader).SetMatrix4f("u_MVP", camera->GetCameraProjection() * transform->GetModelProjection());
 	(*renderer).Draw(*vertexArray, *indexBuffer, *shader);
 }
 void HelloTriangle::OnClose()
