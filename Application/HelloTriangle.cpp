@@ -91,15 +91,6 @@ void HelloTriangle::RenderUpdate(float deltaTime)
 	ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
 
 }
-void PrintTransformInfo(Transform transform)
-{
-	print("Position:");
-	print("{0} {1} {2}", transform.position.x, transform.position.y, transform.position.z);
-	print("Scale:");
-	print("{0} {1} {2}", transform.scale.x, transform.scale.y, transform.scale.z);
-	print("Rotation:");
-	print("{0} {1} {2}", transform.rotation.x, transform.rotation.y, transform.rotation.z);
-}
 void HelloTriangle::OnClose()
 {
 	ImGui_ImplGlfwGL3_Shutdown();
