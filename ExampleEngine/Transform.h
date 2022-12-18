@@ -17,7 +17,7 @@ namespace FrogEngine
 		}
 		glm::mat4 GetModelProjection()
 		{
-			return glm::scale(glm::mat4(1), scale) * glm::translate(glm::mat4(1), position) * glm::rotate(glm::mat4(1), rotation.z, glm::vec3(0.0f, 0.0f, 1.0f));
+			return glm::scale(glm::mat4(1), scale) * glm::translate(glm::mat4(1), position) * glm::rotate(glm::mat4(1), rotation.x, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(glm::mat4(1), rotation.y, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::rotate(glm::mat4(1), rotation.z, glm::vec3(0.0f, 0.0f, 1.0f));
 		}
 	};
 }

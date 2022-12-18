@@ -1,6 +1,6 @@
 #pragma once
 #include "glfw3.h"
-
+#include "Log.h"
 namespace FrogEngine
 {
 	class Application
@@ -9,7 +9,8 @@ namespace FrogEngine
 		Application();
 		static Application& GetApplication()  { return *s_Instance; }
 		GLFWwindow* Window;
-		
+		virtual void OnMouseScrolling(double offset) { }
+		virtual void OnWindowResize(int width, int height) { print("window resize app"); }
 		/// <summary>
 		/// Runs before render loop
 		/// </summary>

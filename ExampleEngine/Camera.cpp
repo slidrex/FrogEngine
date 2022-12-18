@@ -1,21 +1,26 @@
 #include "Camera.h"
 #include "glm/gtc/matrix_transform.hpp"
+#include "Log.h"
 
 FrogEngine::Camera::Camera(glm::vec3 startPosition, float leftProjection, float rightProjection, float bottomProjection, float topProjection)
 {
 	m_Position = startPosition;
-	m_Projection.x = leftProjection;
-	m_Projection.y = rightProjection;
-	m_Projection.z = bottomProjection;
-	m_Projection.w = topProjection;
+	m_SourceProejction.x = leftProjection;
+	m_SourceProejction.y = rightProjection;
+	m_SourceProejction.z = bottomProjection;
+	m_SourceProejction.w = topProjection;
+	m_Projection = m_SourceProejction;
+	m_ZoomLevel = glm::vec2(1.0f, 1.0f);
 }
 void FrogEngine::Camera::Move(glm::vec3 delta)
 {
 	m_Position -= delta;
 }
-void FrogEngine::Camera::Zoom(float scale)
+void FrogEngine::Camera::SetZoomLevel(float xZoom, float yZoom)
 {
-	m_Projection += glm::vec4(-scale, scale, -scale, scale);
+	m_ZoomLevel = glm::vec2(xZoom, yZoom);
+	m_Projection = m_SourceProejction * glm::vec4(-xZoom, xZoom, -yZoom, yZoom);
+	print(m_Projection.x);
 }
 glm::mat4 FrogEngine::Camera::GetCameraProjection()
 {
