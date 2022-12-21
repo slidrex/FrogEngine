@@ -49,6 +49,10 @@ char* FrogEngine::Shader::GetShaderInfoLog(GLint shader)
 	glGetShaderInfoLog(shader, length, &length, log);
 	return log;
 }
+void Shader::SetUniform1f(const std::string& name, float f0)
+{
+	glUniform1f(GetUniformLocation(name), f0);
+}
 void Shader::SetUniform4f(const std::string& name, float f1, float f2, float f3, float f4)
 {
 	glUniform4f(GetUniformLocation(name), f1, f2, f3, f4);

@@ -41,7 +41,7 @@ void FrogEngine::EntryPoint::Run()
 			return;
 		}
 		int windowWeight = 500 * 2, windowHeight = 500 * 2;
-		application->Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", glfwGetPrimaryMonitor(), NULL);
+		application->Window = glfwCreateWindow(windowWeight, windowHeight, "FrogEngine", NULL, NULL);
 
 
 		glfwMakeContextCurrent(application->Window);

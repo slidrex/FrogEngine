@@ -21,7 +21,9 @@
     <None Include="Basicf.shader">
       <Filter>src\shaders</Filter>
     </None>
-    <None Include="Basicv.shader" />
+    <None Include="Basicv.shader">
+      <Filter>src\shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HelloTriangle.h">

@@ -18,7 +18,7 @@ namespace FrogEngine
 		Quad(Vertex2f v0, Vertex2f v1, Vertex2f v2, Vertex2f v3);
 		void SetTexture(std::string texture, unsigned int slot, Shader &shader, std::string samplerUniform);
 	};
-	Quad* CreateQuad(float x, float y, float xSize, float ySize);
+	Quad* CreateQuad(float x, float y, float xSize, float ySize, glm::vec2 t_bottomLeft, glm::vec2 t_upLeft, glm::vec2 t_upRight, glm::vec2 t_bottomRight);
 	class Renderer
 	{
 	public:
