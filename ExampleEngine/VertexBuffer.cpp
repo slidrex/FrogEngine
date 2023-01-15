@@ -24,11 +24,11 @@ VertexBuffer::VertexBuffer(Vertex2f* verteces, GLuint vertexCount)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex2f) * vertexCount, positions, GL_STATIC_DRAW);
 }
 
-VertexBuffer::VertexBuffer(const void *positions, unsigned int size)
+VertexBuffer::VertexBuffer(const void *verteces, unsigned int size)
 {
 	glGenBuffers(1, &m_ID);
 	Bind();
-	glBufferData(GL_ARRAY_BUFFER, size, positions, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, size, verteces, GL_STATIC_DRAW);
 }
 void VertexBuffer::Bind() const
 {

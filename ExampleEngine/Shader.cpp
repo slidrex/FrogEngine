@@ -24,6 +24,7 @@ Shader::Shader(const std::string& vertexSource, const std::string& fragmentSourc
 	
 	const char* vertexSrc = vertexSource.c_str();
 	const char* fragmentSrc = fragmentSource.c_str();
+	
 	glShaderSource(fragmentShader, 1, &fragmentSrc, nullptr);
 	glShaderSource(vertexShader, 1, &vertexSrc, nullptr);
 	glCompileShader(vertexShader);

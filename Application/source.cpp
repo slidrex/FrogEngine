@@ -1,11 +1,12 @@
 #include <FrogEngine.h>
-#include "HelloTriangle.h"
+#include "PixelEditor.h"
 #include "ErrorCatcher.h"
 #include <FrogEngineFileParser.h>
+#include "EntryPoint.h"
 
 int main()
 {
-	FrogEngine::EntryPoint* app = new FrogEngine::EntryPoint(new HelloTriangle());
+	FrogEngine::EntryPoint* app = new FrogEngine::EntryPoint(new PixelEditor());
 	(*app).Run();
 	delete app;
 }

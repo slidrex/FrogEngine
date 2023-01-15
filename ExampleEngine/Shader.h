@@ -11,7 +11,7 @@ namespace FrogEngine
 	{
 	public:
 
-		Shader(const std::string& vertexPath, const std::string& fragmentPath);
+		Shader(const std::string& vertexSource, const std::string& fragmentSource);
 		~Shader();
 		const void Bind();
 		const void Unbind();

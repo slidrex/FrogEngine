@@ -14,11 +14,14 @@
     <Filter Include="src\Additional">
       <UniqueIdentifier>{508ff1e1-57da-4580-bd92-be4d07a5a6a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrogRelease">
-      <UniqueIdentifier>{62b95c23-a806-4656-a15e-f7aea7fbaeb8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Additional\imgui">
       <UniqueIdentifier>{1cd69c7d-50c3-4615-8912-f70e5aed08df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Application">
+      <UniqueIdentifier>{3cfccd59-d7dc-4150-a644-54818114d462}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Animations">
+      <UniqueIdentifier>{fc2ba1aa-2010-4cb0-b387-d2284b21fe26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,9 +45,6 @@
     </ClCompile>
     <ClCompile Include="ErrorCatcher.cpp">
       <Filter>src\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>src\Render</Filter>
@@ -76,8 +76,17 @@
     <ClCompile Include="imgui\imgui_impl_glfw_gl3.cpp">
       <Filter>src\Additional\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>src\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.h">
+      <Filter>src\Application</Filter>
+    </ClCompile>
     <ClCompile Include="SpriteSheetAnimation.cpp">
-      <Filter>src</Filter>
+      <Filter>src\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="EntryPoint.cpp">
+      <Filter>src\Application</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +117,6 @@
     <ClInclude Include="ErrorCatcher.h">
       <Filter>src\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="Events.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -129,7 +135,6 @@
     <ClInclude Include="BufferLayout.h">
       <Filter>src\Render</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h" />
     <ClInclude Include="imgui\imconfig.h">
       <Filter>src\Additional\imgui</Filter>
     </ClInclude>
@@ -151,7 +156,19 @@
     <ClInclude Include="imgui\imgui_impl_glfw_gl3.h">
       <Filter>src\Additional\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="imgwrite.h">
+      <Filter>src\Additional</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>src\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="EntryPoint.h">
+      <Filter>src\Application</Filter>
+    </ClInclude>
     <ClInclude Include="SpriteSheetAnimation.h">
+      <Filter>src\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

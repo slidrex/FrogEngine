@@ -13,20 +13,26 @@
     <ClCompile Include="source.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="HelloTriangle.cpp">
+    <ClCompile Include="PixelEditor.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basicf.shader">
+    <None Include="Default_f.shader">
       <Filter>src\shaders</Filter>
     </None>
-    <None Include="Basicv.shader">
+    <None Include="Default_v.shader">
+      <Filter>src\shaders</Filter>
+    </None>
+    <None Include="Color_f.shader">
+      <Filter>src\shaders</Filter>
+    </None>
+    <None Include="Color_v.shader">
       <Filter>src\shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HelloTriangle.h">
+    <ClInclude Include="PixelEditor.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

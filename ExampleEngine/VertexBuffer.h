@@ -10,7 +10,7 @@ namespace FrogEngine
 	public:
 		VertexBuffer(Vertex2f *verteces, GLuint vertexCount);
 		VertexBuffer(GLuint size);
-		VertexBuffer(const void* positions, unsigned int size);
+		VertexBuffer(const void* verteces, unsigned int size);
 		~VertexBuffer();
 		void Bind() const;
 		void Unbind() const;

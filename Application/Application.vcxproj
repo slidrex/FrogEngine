@@ -83,15 +83,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HelloTriangle.cpp" />
+    <ClCompile Include="PixelEditor.cpp" />
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HelloTriangle.h" />
+    <None Include="Color_v.shader" />
+    <None Include="Default_f.shader" />
+    <None Include="Default_v.shader" />
+    <None Include="Color_f.shader" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basicf.shader" />
-    <None Include="Basicv.shader" />
+    <ClInclude Include="PixelEditor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

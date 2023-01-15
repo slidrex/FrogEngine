@@ -41,5 +41,11 @@ namespace FrogEngine
 			Elements.push_back(LayoutElement(count, GL_FLOAT, false));
 			m_stride += sizeof(float) * count;
 		}
+		template<>
+		void Push<double>(unsigned int count)
+		{
+			Elements.push_back(LayoutElement(count, GL_DOUBLE, false));
+			m_stride += sizeof(double) * count;
+		}
 	};
 }
