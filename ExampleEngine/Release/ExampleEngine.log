@@ -1,3 +1,0 @@
-﻿  main.cpp
-main.obj : error LNK2001: unresolved external symbol __imp__glewInit@0
-C:\Proj\ProjectOpenGL\Release\ExampleEngine.exe : fatal error LNK1120: 1 unresolved externals

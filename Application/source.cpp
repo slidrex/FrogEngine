@@ -1,12 +1,12 @@
-#include <FrogEngine.h>
-#include "PixelEditor.h"
+#include <MurkEngine.h>
+#include "Sandbox.h"
 #include "ErrorCatcher.h"
-#include <FrogEngineFileParser.h>
+#include <FileParser.h>
 #include "EntryPoint.h"
 
 int main()
 {
-	FrogEngine::EntryPoint* app = new FrogEngine::EntryPoint(new PixelEditor());
+	Murk::EntryPoint* app = new Murk::EntryPoint(new Sandbox());
 	(*app).Run();
 	delete app;
 }
