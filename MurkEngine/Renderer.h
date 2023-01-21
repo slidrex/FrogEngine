@@ -21,12 +21,14 @@ namespace Murk
 	class Renderer
 	{
 	public:
-		void SetClearColor(glm::vec4 color);
-		void Clear() const;
-		void SetPixelSize(float size) { glPointSize(size); };
-		void SetLineSize(float size) { glLineWidth(size); };
-		void Draw(RenderMode renderMode, Murk::VertexArray& vertexArray, Shader& shader, Murk::IndexBuffer& indexBuffer) const;
+		static void SetClearColor(glm::vec4 color);
+		static void Clear();
+		static void SetPixelSize(float size) { glPointSize(size); };
+		static void SetLineSize(float size) { glLineWidth(size); };
+		static void Draw(RenderMode renderMode, Murk::VertexArray& vertexArray, Shader& shader, Murk::IndexBuffer& indexBuffer);
 	private:
+		Renderer();
+		static Renderer s_Instance;
 		glm::vec4 clearColor;
 	};
 }

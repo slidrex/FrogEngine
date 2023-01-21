@@ -1,6 +1,8 @@
 ﻿  RenderStack.cpp
 C:\Proj\Murk\MurkEngine\RenderStack.cpp(33,19): warning C4018: '<': signed/unsigned mismatch
   Renderer.cpp
+  VertexBuffer.cpp
+C:\Proj\Murk\MurkEngine\VertexBuffer.cpp(19,19): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
 image.obj : warning LNK4006: _stbi_load_from_memory already defined in Texture.obj; second definition ignored
 image.obj : warning LNK4006: _stbi_load_from_callbacks already defined in Texture.obj; second definition ignored

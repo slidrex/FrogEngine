@@ -1,8 +1,8 @@
 #include "RenderStack.h"
 
-Murk::RenderStack::RenderStack(Renderer *renderer)
+Murk::RenderStack::RenderStack()
 {
-	m_Renderer = renderer;
+
 }
 
 Murk::RenderStackElement* Murk::RenderStack::PushRenderElement(const std::string& vertexShaderSource, const std::string& fragmentShaderSource, IndexBuffer* ibo, VertexArray* vao)
@@ -34,6 +34,6 @@ void Murk::RenderStack::DrawStack() const
 	{
 		RenderStackElement* el = m_RenderElements[i];
 
-		m_Renderer->Draw(Murk::Triangles, *el->vertexArray, *el->shader, *el->indexBuffer);
+		Renderer::Draw(Murk::Triangles, *el->vertexArray, *el->shader, *el->indexBuffer);
 	}
 }

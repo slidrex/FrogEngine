@@ -15,9 +15,8 @@ namespace Murk
 	{
 	private:
 		std::vector<RenderStackElement*> m_RenderElements;
-		Renderer *m_Renderer;
 	public:
-		RenderStack(Renderer *renderer);
+		RenderStack();
 		RenderStackElement* PushRenderElement(const std::string& vertexShaderSource, const std::string& fragmentShaderSource, IndexBuffer* ibo, VertexArray* vao);
 		RenderStackElement* PushRenderElement(const std::string &vertexShaderSource, const std::string &fragmentShaderSource, Shape2D* shape);
 		void DrawStack() const;
