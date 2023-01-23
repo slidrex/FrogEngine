@@ -36,7 +36,7 @@ void Murk::EntryPoint::RenderInit(Murk::Application* application)
 		return;
 	}
 	int windowWeight = 500 * 2, windowHeight = 500 * 2;
-	application->Window = glfwCreateWindow(windowWeight, windowHeight, "Murk", NULL, NULL);
+	application->Window = glfwCreateWindow(windowWeight, windowHeight, "Murk", glfwGetPrimaryMonitor(), NULL);
 
 
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "Renderer.h"
 #include "Shapes2D.h"
+#include "Shapes3D.h"
 #include <vector>
 
 namespace Murk
@@ -14,11 +15,11 @@ namespace Murk
 	class RenderStack
 	{
 	private:
-		std::vector<RenderStackElement*> m_RenderElements;
 	public:
+		std::vector<RenderStackElement*> m_RenderElements;
 		RenderStack();
 		RenderStackElement* PushRenderElement(const std::string& vertexShaderSource, const std::string& fragmentShaderSource, IndexBuffer* ibo, VertexArray* vao);
-		RenderStackElement* PushRenderElement(const std::string &vertexShaderSource, const std::string &fragmentShaderSource, Shape2D* shape);
+		RenderStackElement* PushRenderElement(const std::string &vertexShaderSource, const std::string &fragmentShaderSource, Shape3D* shape);
 		void DrawStack() const;
 	};
 }

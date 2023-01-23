@@ -16,14 +16,14 @@ Murk::RenderStackElement* Murk::RenderStack::PushRenderElement(const std::string
 	return element;
 }
 
-Murk::RenderStackElement* Murk::RenderStack::PushRenderElement(const std::string& vertexShaderSource, const std::string& fragmentShaderSource, Shape2D* shape)
+Murk::RenderStackElement* Murk::RenderStack::PushRenderElement(const std::string& vertexShaderSource, const std::string& fragmentShaderSource, Shape3D* shape)
 {
 	Murk::IndexBuffer *ibo = new Murk::IndexBuffer(shape->indeces, shape->indexCount);
 	
-	Murk::VertexBuffer* vbo = new Murk::VertexBuffer((const void*)shape->verteces, sizeof(Vertex2f) * shape->vertexCount);
+	Murk::VertexBuffer* vbo = new Murk::VertexBuffer((const void*)shape->verteces, sizeof(Vertex3f) * shape->vertexCount);
 	Murk::BufferLayout layout;
-	layout.Push<float>(2); //pos
-	layout.Push<float>(2); //tex
+	layout.Push<float>(3); //pos
+	layout.Push<float>(4); //color
 	Murk::VertexArray* vao = new Murk::VertexArray(*vbo, layout);
 	return PushRenderElement(vertexShaderSource, fragmentShaderSource, ibo, vao);
 }

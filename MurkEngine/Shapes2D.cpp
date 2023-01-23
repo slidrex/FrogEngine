@@ -15,7 +15,7 @@ Murk::Shape2D* Murk::CreateSquare(float x, float y, float xSize, float ySize)
 	shape->indeces = new unsigned int[6]
 	{
 		0, 1, 2,
-			0, 2, 3
+		0, 2, 3
 	};
 	return shape;
 }

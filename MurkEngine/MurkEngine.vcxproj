@@ -101,6 +101,7 @@
     <ClCompile Include="Layer.h" />
     <ClCompile Include="RenderStack.cpp" />
     <ClCompile Include="Shapes2D.cpp" />
+    <ClCompile Include="Shapes3D.cpp" />
     <ClCompile Include="SpriteSheetAnimation.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexArray.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="RenderStack.h" />
     <ClInclude Include="Shapes2D.h" />
+    <ClInclude Include="Shapes3D.h" />
     <ClInclude Include="SpriteSheetAnimation.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />

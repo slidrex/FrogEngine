@@ -97,6 +97,9 @@
     <ClCompile Include="Shapes2D.cpp">
       <Filter>src\Render</Filter>
     </ClCompile>
+    <ClCompile Include="Shapes3D.cpp">
+      <Filter>src\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IndexBuffer.h">
@@ -184,6 +187,9 @@
       <Filter>src\Render</Filter>
     </ClInclude>
     <ClInclude Include="Shapes2D.h">
+      <Filter>src\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes3D.h">
       <Filter>src\Render</Filter>
     </ClInclude>
   </ItemGroup>

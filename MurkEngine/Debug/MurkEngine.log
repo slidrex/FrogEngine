@@ -1,9 +1,8 @@
-﻿  RenderStack.cpp
-C:\Proj\Murk\MurkEngine\RenderStack.cpp(33,19): warning C4018: '<': signed/unsigned mismatch
-  Renderer.cpp
-  VertexBuffer.cpp
-C:\Proj\Murk\MurkEngine\VertexBuffer.cpp(19,19): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  EntryPoint.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Proj\Murk\Dependencies\GLFW\include\glfw3.h(123,1): message : see previous definition of 'APIENTRY'
+C:\Proj\Murk\MurkEngine\EntryPoint.cpp(54,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Proj\Murk\MurkEngine\EntryPoint.cpp(65,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 image.obj : warning LNK4006: _stbi_load_from_memory already defined in Texture.obj; second definition ignored
 image.obj : warning LNK4006: _stbi_load_from_callbacks already defined in Texture.obj; second definition ignored
 image.obj : warning LNK4006: _stbi_load already defined in Texture.obj; second definition ignored
